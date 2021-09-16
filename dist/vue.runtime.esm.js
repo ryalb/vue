@@ -2125,11 +2125,11 @@ function _traverse (val, seen) {
   }
   if (isA) {
     i = val.length;
-    while (i--) { _traverse(val[i], seen); }
+    while (i--) { setTimeout(_traverse, 0, val[i], seen); } 
   } else {
-    keys = Object.keys(val);
+    keys = Object.keys(val); 
     i = keys.length;
-    while (i--) { _traverse(val[keys[i]], seen); }
+    while (i--) { setTimeout(_traverse, 0, val[keys[i]], seen); } 
   }
 }
 
